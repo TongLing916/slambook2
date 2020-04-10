@@ -128,14 +128,14 @@ int main(int argc, char **argv) {
     // let's randomly pick pixels in the first image and generate some 3d points in the first image's frame
     cv::RNG rng;
     int nPoints = 2000;
-    int boarder = 20;
+    int border = 20;
     VecVector2d pixels_ref;
     vector<double> depth_ref;
 
     // generate pixels in ref and load depth data
     for (int i = 0; i < nPoints; i++) {
-        int x = rng.uniform(boarder, left_img.cols - boarder);  // don't pick pixels close to boarder
-        int y = rng.uniform(boarder, left_img.rows - boarder);  // don't pick pixels close to boarder
+        int x = rng.uniform(border, left_img.cols - border);  // don't pick pixels close to border
+        int y = rng.uniform(border, left_img.rows - border);  // don't pick pixels close to border
         int disparity = disparity_img.at<uchar>(y, x);
         double depth = fx * baseline / disparity; // you know this is disparity to depth
         depth_ref.push_back(depth);

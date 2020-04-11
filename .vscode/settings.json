@@ -70,6 +70,8 @@
         "shared_mutex": "cpp",
         "regex": "cpp",
         "*.inc": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "string": "cpp",
+        "iterator": "cpp"
     }
 }
